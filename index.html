@@ -25,7 +25,13 @@
 		<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 		<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 		<script type="text/babel">
-			ReactDOM.render(<h1>Hello World</h1>, document.getElementById('root'));
+			class App extends React.Component {
+				render () {
+					return ( <div>Should return an unique element</div> );
+				}
+			}
+			
+			ReactDOM.render(<App />, document.getElementById('root')); // throw App on the element with id equals root
 		</script>
 	</body>
 </html>
