@@ -51,7 +51,14 @@
 				width: 98%;
 				height: 98%;
 				color: black;
+				display: flex;
+				flex-flow: row wrap;
+				align-items: center;
+				justify-content: space-evenly;
 				background-color: white;
+			}
+			
+			.splashGame button {
 			}
 		</style>
 	</head>
@@ -71,11 +78,15 @@
 						gameRunning: 0
 					};
 				}
+				
+				runGame = () => {
+					return this.setState({gameRunning: !this.state.gameRunning});
+				};
 
 				render () {
 					let renderTiles = allTiles.map((eachTile, index) => <Tile id={index} />);
 					
-					let initialScreen = <SplashGame />;
+					let initialScreen = <SplashGame onClick={this.runGame} />;
 
 					return (
 						<div id="container">
@@ -89,7 +100,7 @@
 				render () {
 					return (
 						<div className="splashGame">
-							<h1>Inicio do jogo</h1>
+							<button>Vamos lá</button>
 						</div>
 					);
 				}
