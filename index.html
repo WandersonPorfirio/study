@@ -46,6 +46,13 @@
 				font-family: 'Open Sans', sans-serif;
 				background-color: white;
 			}
+			
+			.splashGame {
+				width: 98%;
+				height: 98%;
+				color: black;
+				background-color: white;
+			}
 		</style>
 	</head>
 	<body>
@@ -57,12 +64,32 @@
 			let allTiles = new Array(9).fill(undefined), i = 0;
 
 			class App extends React.Component {
+				constructor (props) {
+					super(props);
+
+					this.state = {
+						gameRunning: 0
+					};
+				}
+
 				render () {
 					let renderTiles = allTiles.map((eachTile, index) => <Tile id={index} />);
+					
+					let initialScreen = <SplashGame />;
 
 					return (
 						<div id="container">
-							{ renderTiles }
+							{ this.state.gameRunning ? renderTiles : initialScreen }
+						</div>
+					);
+				}
+			}
+			
+			class SplashGame extends React.Component {
+				render () {
+					return (
+						<div className="splashGame">
+							<h1>Inicio do jogo</h1>
 						</div>
 					);
 				}
