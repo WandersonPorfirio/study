@@ -48,17 +48,6 @@
 		</style>
 	</head>
 	<body>
-		<div id="container">
-			<div class="tile">1</div>
-			<div class="tile">2</div>
-			<div class="tile">3</div>
-			<div class="tile">4</div>
-			<div class="tile">5</div>
-			<div class="tile">6</div>
-			<div class="tile">7</div>
-			<div class="tile">8</div>
-			<div class="tile">9</div>
-		</div>
 		
 		<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
 		<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
@@ -66,9 +55,35 @@
 		<script type="text/babel">
 			class App extends React.Component {
 				render () {
-					return ( <div>Should return an unique element</div> );
+					return (
+						<div id="container">
+							<Tile />
+						</div>
+					);
 				}
 			}
+			
+			class Tile extends React.Component {
+				constructor (props) {
+					super(props);
+					
+					this.state = {
+						value: 1
+					};
+				}
+				
+				click = () => {
+					this.setState({value: ++this.state.value});
+				};
+
+				render () {
+					return (
+						<div className="tile">{this.state.value || ''}</div>
+					);
+				}
+			}
+			
+			ReactDOM.render(<App />, document.body);
 		</script>
 	</body>
 </html>
