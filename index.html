@@ -54,11 +54,15 @@
 		<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 		<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 		<script type="text/babel">
+			let allTiles = new Array(9).fill(undefined), i = 0;
+
 			class App extends React.Component {
 				render () {
+					let renderTiles = allTiles.map((eachTile, index) => <Tile id={index} />);
+
 					return (
 						<div id="container">
-							<Tile />
+							{ renderTiles }
 						</div>
 					);
 				}
@@ -79,7 +83,7 @@
 
 				render () {
 					return (
-						<div className="tile" onClick={this.click}>{this.state.value || ''}</div>
+						<div className="tile" onClick={this.click} id={this.props.id}>{this.state.value || ''}</div>
 					);
 				}
 			}
