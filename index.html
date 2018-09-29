@@ -75,17 +75,17 @@
 					super(props);
 
 					this.state = {
+						playerTime: x,
 						gameRunning: 0
 					};
 				}
 				
 				runGame = () => {
-					alert('ran');
 					return this.setState({gameRunning: 1});
 				};
 
 				render () {
-					let renderTiles = allTiles.map((eachTile, index) => <Tile id={index} />);
+					let renderTiles = allTiles.map((eachTile, index) => <Tile dataId={index} id={index} />);
 					
 					let initialScreen = <SplashGame onClick={this.runGame} />;
 
