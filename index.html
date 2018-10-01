@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Studying</title>
 		<meta charset="UTF-8" />
+		<title>First ReactJs Application</title>
 		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no" />
 		<link href="https://fonts.googleapis.com/css?family=Contrail+One" rel="stylesheet" />
 		<style type="text/css">
@@ -142,7 +142,7 @@
 
 				render () {
 					return (
-						<div className="tile" dataId={'tile' + this.props.id} onClick={this.click} id={this.props.id}>{this.state.value || ''}</div>
+						<div className="tile" data-id={'tile' + this.props.id} onClick={this.click}>{this.state.value || ''}</div>
 					);
 				}
 			}
