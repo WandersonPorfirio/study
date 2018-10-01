@@ -142,7 +142,7 @@
 
 				render () {
 					return (
-						<div className="tile" onClick={this.click} id={this.props.id}>{this.state.value || ''}</div>
+						<div className="tile" dataId={'tile' + this.props.id} onClick={this.click} id={this.props.id}>{this.state.value || ''}</div>
 					);
 				}
 			}
