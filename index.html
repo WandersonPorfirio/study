@@ -127,7 +127,7 @@
 				}
 
 				render () {
-					let renderTiles = allTiles.map((eachTile, index) => <Tile dataId={index} id={index} />);
+					let renderTiles = allTiles.map((eachTile, index) => <Tile tileClick={this.tileClick} dataId={index} id={index} />);
 					
 					let initialScreen = <SplashGame onClick={this.runGame} />;
 
@@ -164,7 +164,7 @@
 
 				render () {
 					return (
-						<div className="tile" data-id={'tile' + this.props.id} onClick={this.click}>{this.state.value || ''}</div>
+						<div className="tile" data-id={'tile' + this.props.id} onClick={this.tileClick(this.id)}>{this.state.value || ''}</div>
 					);
 				}
 			}
